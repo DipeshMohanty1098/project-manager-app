@@ -1,38 +1,188 @@
-.App {
+html{
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  cursor: pointer;
+}
+
+p{
+  margin-top: 0;
+}
+
+.projectForm{
+  width: 40%;
+  padding-left: 5px;
+}
+
+i{
+  cursor: pointer;
+}
+label{
+  font-size: 21px;
+}
+
+.collectionItem{
+  width: 500px;
+  animation: fadeIn 2s;
+}
+
+.project-list{
+  animation: fadeIn 4s;
+  width: 80%;
+  padding-left: 5px;
+  
+}
+
+.comment-input{
+  word-wrap: break-word;
+}
+
+.issue-page{
+  display: inline-block;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  background: linear-gradient(to bottom, #030008, #0c0910, #131115, #19171a, #1e1c1f, #232124, #292729, #2e2c2e 150px, white 0%);
+}
+
+.signincontainer{
+  width:100%;
+  height:100%;
+  background: linear-gradient(to bottom, #030008, #0c0910, #131115, #19171a, #1e1c1f, #232124, #292729, #2e2c2e 150px, white 0%);
+}
+
+
+.sign-in{
+	position: absolute;
+  height: 60%;
   text-align: center;
+  width: 50%;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+	margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.no-route{
+  position: absolute;
+  height: 60%;
+  text-align: center;
+  width: 50%;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+	margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.error-page{
+  position: absolute;
+  height: 60%;
+  text-align: center;
+  width: 50%;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+	margin: auto;
+}
+
+option{
+  animation: fadeIn 2s;
+}
+
+@media only screen and (max-width: 1200px) {
+  .nav-bar{
+    width: 10%;
+  }
+  .collectionItem{
+    width: 180px;
+  }
+  .collaborator-list{
+    padding-left: 0;
+  }
+  .project{
+    background: linear-gradient(to bottom, #030008, #0c0910, #131115, #19171a, #1e1c1f, #232124, #292729, #2e2c2e 100px, white 0%);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.projects{
+  display: inline-block;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  background: linear-gradient(to bottom, #030008, #0c0910, #131115, #19171a, #1e1c1f, #232124, #292729, #2e2c2e 130px, white 0%);
+}
+
+.project{
+  display: inline-block;
+  overflow-y: hidden;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  background: linear-gradient(to bottom, #030008, #0c0910, #131115, #19171a, #1e1c1f, #232124, #292729, #2e2c2e 161px, white 0%);
+}
+
+.collaborator-list{
+  padding-top: 0;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 2px;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+.nav-bar{
+  width: 60%;
+  padding-left: 0;
+  
+}
+
+.issues{
+  padding-top: 0;
+  width: 100%;
+  overflow-y: scroll;
+  height: 350px;
+}
+
+.issues-options{
   display: flex;
-  flex-direction: column;
+  justify-content: space-around 5px;
+}
+
+.content{
+  display: flex;
+}
+
+
+.loading{
   align-items: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 20%
 }
 
-.App-link {
-  color: #61dafb;
+.collaborators{
+  float: right;
+  padding-right: 45px;
+  padding-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.welcome{
+  height: 50%;
+  padding-top: 0;
+  padding-left: 10px;
+  background-image: linear-gradient( black 50%);
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  } to {
+    opacity: 1;
   }
 }
