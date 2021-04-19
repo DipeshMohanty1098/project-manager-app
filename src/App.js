@@ -9,6 +9,7 @@ import ProjectForm from './components/createProjectForm';
 import Routes from './routes';
 import Sign_In from './components/sign_in';
 import {BrowserRouter, withRouter} from 'react-router-dom';
+import Popup from 'reactjs-popup';
 
 
 
@@ -42,6 +43,7 @@ function SignIn(){
 function Home(props){
   const user = props.user; 
   const usersRef = firestore.collection('Users');
+  const [showDrop, setShowDrop] = useState(false);
   let data = null;
   const createUser = async() => {
     const usersRef = firestore.collection('Users');
@@ -68,13 +70,17 @@ function Home(props){
     <div className="nav-wrapper">
     <a className="brand-logo" style={{paddingLeft: "10px", color: "black"}}>Project Manager</a>
     <ul className="right hide-on-med-and-down" id="nav-mobile">
-      <li><a onClick={() => auth.signOut()} >Sign Out</a></li>
+      <li><a onClick={() => auth.signOut()}>Sign Out</a></li>
+      <Popup trigger={<li style={{cursor: "pointer"}}><a>Drop</a></li>} position="bottom">
+      <div className="collection">
+      <a style={{cursor: "pointer"}} onClick={() => auth.signOut()} className="collection-item">Sign Out</a>
+      <a style={{cursor: "pointer"}} onClick={() => auth.signOut()} className="collection-item">Sign Out</a>
+      <a style={{cursor: "pointer"}} onClick={() => auth.signOut()} className="collection-item">Sign Out</a>
+      </div>
+      </Popup>
     </ul>
     </div>
     </nav>
-    <ul class="sidenav" id="mobile-demo">
-    <li><a onClick={() => auth.signOut()}>Sign Out</a></li>
-    </ul>
     <Routes user={user}/>
     </div>
     )}

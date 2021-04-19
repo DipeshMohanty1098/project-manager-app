@@ -41,18 +41,14 @@ class ProjectList extends React.Component{
 
     render(){
         const state = this.state;
-        const projects = state.projects ? (state.projects.map((project)=>{
+        const projects = state.projects ? state.projects === 0 ? <p>Could not find any projects. Create a new porject by clicking on the "+" button on the right!</p> : (state.projects.map((project)=>{
             return (
                 <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                 </div>
                 <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{project}<i class="material-icons right" onClick={() => this.onClickCard(project)}>more_vert</i></span>
+                <span class="card-title activator grey-text text-darken-4" onClick={() => this.onClickCard(project)}>{project}</span>
                 <p><Link to = {"/" + project}><i class="material-icons">arrow_forward</i></Link></p>
-                </div>
-                <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4" onClick={() => this.onClickCard(project)}>{project}<i class="material-icons right">close</i></span>
-                <p>{this.state.description}</p>
                 </div>
                 </div>
             )

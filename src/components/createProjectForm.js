@@ -21,7 +21,9 @@ class ProjectForm extends React.Component{
         error_collab: "",
         success: "",
         collaborators: [],
-        error_create: ""
+        error_create: "",
+        repo_name: "",
+        repo_owner: ""
     }
 
     //add self as a collaborator
@@ -168,13 +170,15 @@ class ProjectForm extends React.Component{
                 }
                 projectRef.doc(this.state.projectName).set({
                     projectName: this.state.projectName,
+                    repo_name: this.state.repo_name,
+                    repo_owner: this.state.repo_owner,
                     description: this.state.description,
                     collaborators: collaborators,
                     issues: [],
                     features: [],
                     createdAt: firebase.firestore.Timestamp.fromDate(new Date())
                 })
-                this.props.history.push("/success");
+                this.props.history.push("/" + this.state.projectName);
             }
         })
         
@@ -193,6 +197,11 @@ class ProjectForm extends React.Component{
             <label htmlFor="description">Enter Project Description:  </label>
             <input className="input-field" type="text" id="description" onChange={this.handleChange} value={state.description} required/>
             <p style={{color: "red"}}>{state.error_description}</p>
+            <p>Link your GitHub repository, to receive latest updates/progress in your project. (Repo shouldn't be private)</p>
+            <label htmlFor="repo_name">Enter GitHub repository name: (Not mandatory)</label>
+            <input className="input-field" type="text" id="repo_name" onChange={this.handleChange} value={state.repo_name}/>
+            <label htmlFor="repo_owner">Enter GitHub repository owner:</label>
+            <input disabled={state.repo_name === ""? true: false} className="input-field" type="text" id="repo_owner" onChange={this.handleChange} value={state.repo_owner}/>
             <label htmlFor="collaborator">Enter collaborator email:  </label>
             <input className="input-field" type="email" id="collaborator" onChange={this.handleChange} value={state.collaborator}/>
             <p style={{color: "red"}}>{state.error_collab}</p>

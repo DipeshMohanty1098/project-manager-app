@@ -7,6 +7,7 @@ import Loading from '../../shared/loading';
 import Error from '../dashboard/shared/error_page';
 import IssueRoutes from './routes';
 import Features from './features';
+import GitHub from '../github_integration';
 
 const firestore = firebase.firestore();
 const projectRef = firestore.collection('Projects');
@@ -63,6 +64,7 @@ class ProjectOverview extends React.Component{
                 </div>
                 <div className="right">
                 <Collaborators  collaborators={state.collaborators ? state.collaborators : ["1","2"]} user={this.props.user}/>
+                <GitHub repo_name={state.project.repo_name} repo_owner={state.project.repo_owner}/>
                 </div>
                 </div>
             </div>
