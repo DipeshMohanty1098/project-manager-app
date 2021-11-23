@@ -1,9 +1,10 @@
 Project Manager App 
 
+Check it out here - https://project-manager-8000a.web.app/
 
 An app that lets you track the progress of your personal projects.
 
-Create a project 
+Create a project and add collaborators
 
 ![image](https://user-images.githubusercontent.com/60932129/143014446-496fc93f-2efb-42a0-acf1-e91da8cd6200.png)
 
